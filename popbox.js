@@ -4,9 +4,9 @@
 		var settings = $.extend({
 			selector		: this.selector,
 			open			: '.open',
-			box				: '.box',
+			box			: '.box',
 			arrow			: '.arrow',
-			arrow_border	: '.arrow-border',
+			arrow_border		: '.arrow-border',
 			close			: '.close'
 		}, options);
 
