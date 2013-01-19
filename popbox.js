@@ -7,7 +7,8 @@
 			box			: '.box',
 			arrow			: '.arrow',
 			arrow_border		: '.arrow-border',
-			close			: '.close'
+			close			: '.close',
+			direction		: 'top'
 		}, options);
 
 		var methods = {
@@ -17,13 +18,33 @@
 				var pop = $(this);
 				var box = $(this).parent().find(settings['box']);
 
-				box.find(settings['arrow']).css({'left': box.width()/2 - 10});
-				box.find(settings['arrow_border']).css({'left': box.width()/2 - 10});
+				box.find(settings['arrow']).addClass('arrow' + settings['direction']);
+				box.find(settings['arrow_border']).addClass('arrow' + settings['direction'] + '-border');
+
+				if(settings['direction'] == 'top' || settings['direction'] == 'bottom'){
+					box.find(settings['arrow']).css({'left': box.width()/2 - 10});
+					box.find(settings['arrow_border']).css({'left': box.width()/2 - 10});
+				}else{
+					box.find(settings['arrow']).css({'top': box.height()/2 - 10});
+					box.find(settings['arrow_border']).css({'top': box.height()/2 - 10});
+				}
 
 				if(box.css('display') == 'block'){
 					methods.close();
 				} else {
-					box.css({'display': 'block', 'top': 10, 'left': ((pop.parent().width()/2) - box.width()/2 )});
+					if(settings['direction'] == 'top'){
+						box.css({'display': 'block', 'top': 10, 'left': ((pop.parent().width()/2) - box.width()/2 )});
+					}
+					if(settings['direction'] == 'left'){
+						console.log(((pop.parent().width())));
+						box.css({'display': 'block', 'left': ((pop.parent().width()/2) + box.width()/4) - 10, 'bottom': ((pop.parent().height()/2) - box.height()/2 )});
+					}
+					if(settings['direction'] == 'right'){
+						box.css({'display': 'block', 'right': ((pop.parent().width()/2) + box.width()/4) - 10, 'bottom': ((pop.parent().height()/2) - box.height()/2 )});
+					}
+					if(settings['direction'] == 'bottom'){
+						box.css({'display': 'block', 'bottom': 10 + pop.parent().height(), 'right': ((pop.parent().width()/2) - box.width()/2 )});
+					}
 				}
 			},
 
