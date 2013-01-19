@@ -53,7 +53,8 @@ If there are any CSS class name conflicts, they can be overridden.
        'box'           : '.box',
        'arrow'         : '.arrow',
        'arrow_border'  : '.arrow_border',
-       'close'         : '.close'
+       'close'         : '.close',
+       'direction'     : 'top'
       });
    });
 </script>
@@ -64,7 +65,7 @@ If there are any CSS class name conflicts, they can be overridden.
 
 ## Credits
 
-jQuery PopBox developed by [Sean Behan](http://twitter.com/_sbehan) at [Gristmill.io](http://gristmill.io)
+jQuery PopBox developed by [Sean Behan](http://twitter.com/_sbehan) at [Gristmill.io](http://gristmill.io) and [Georg Ehrke](http://twitter.com/georgehrke) at [ownCloud Inc.](https://ownCloud.com)
 
 It is inspired by the balloon UI element found in 37Signals Highrise CRM.
 
