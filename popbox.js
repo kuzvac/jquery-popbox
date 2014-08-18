@@ -1,4 +1,4 @@
-(function(){
+(function(window, document, $){
 
   $.fn.popbox = function(options){
     var settings = $.extend({
@@ -76,4 +76,4 @@
     });
   }
 
-})();
+})(this, document, jQuery);
